@@ -1,0 +1,8 @@
+#!/usr/bin/php
+<?php $wsogmm = preg_split("/\s+/", file_get_contents($argv[1]), 0, 1);
+$bestCost = 2000000000;
+
+for($i = 2; $i < count($wsogmm); $i += 2)
+	$bestCost = min(((int)((int)$wsogmm[1] / (int)$wsogmm[$i + 1]) + 1) * (int)$wsogmm[$i], $bestCost);
+
+echo "$bestCost\n"; ?>

@@ -1,0 +1,9 @@
+#!/usr/bin/python
+import sys
+lines = open(sys.argv[1]).readlines()
+minWeight = int(lines[0][8:])
+bestCost = sys.maxint
+for line in lines[2:]:
+	data = line.split()
+	bestCost = min(((minWeight / int(data[1])) + 1) * int(data[0]), bestCost)
+print bestCost
